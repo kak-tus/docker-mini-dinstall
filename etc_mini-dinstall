@@ -1,0 +1,5 @@
+[DEFAULT]
+archivedir = /data/
+archive_style = simple-subdir
+mail_on_success = false
+logfile = /data/mini-dinstall.log

@@ -1,0 +1,6 @@
+#!/bin/sh
+
+while true; do
+  sleep 30
+  mv /data/incoming/* /data/mini-dinstall/incoming/ 2>/dev/null
+done
