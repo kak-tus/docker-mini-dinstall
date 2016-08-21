@@ -7,7 +7,7 @@ COPY check /bin/check
 
 RUN apt-get update \
   && apt-get install --no-install-recommends --no-install-suggests -y \
-  mini-dinstall \
+  mini-dinstall build-essential \
 
   && mkdir /data \
   && ln -sf /dev/stdout /data/mini-dinstall.log \
