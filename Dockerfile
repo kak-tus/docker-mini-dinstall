@@ -9,7 +9,7 @@ RUN apt-get update \
   && apt-get install --no-install-recommends --no-install-suggests -y \
   mini-dinstall build-essential \
 
-  && mkdir /alloc/data/deb \
+  && mkdir -p /alloc/data/deb \
   && ln -sf /dev/stdout /alloc/data/deb/mini-dinstall.log \
 
   && rm -rf /var/lib/apt/lists/*
