@@ -2,15 +2,15 @@ FROM debian:8
 
 MAINTAINER Andrey Kuzmin "kak-tus@mail.ru"
 
-COPY etc_mini-dinstall /etc/mini-dinstall
+COPY mini-dinstall /etc/mini-dinstall
 COPY check /bin/check
 
 RUN apt-get update \
   && apt-get install --no-install-recommends --no-install-suggests -y \
   mini-dinstall build-essential \
 
-  && mkdir /data \
-  && ln -sf /dev/stdout /data/mini-dinstall.log \
+  && mkdir /alloc/data/deb \
+  && ln -sf /dev/stdout /alloc/data/deb/mini-dinstall.log \
 
   && rm -rf /var/lib/apt/lists/*
 

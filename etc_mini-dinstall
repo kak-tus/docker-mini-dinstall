@@ -1,5 +1,0 @@
-[DEFAULT]
-archivedir = /data/
-archive_style = flat
-mail_on_success = false
-logfile = /data/mini-dinstall.log

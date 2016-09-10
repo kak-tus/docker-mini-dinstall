@@ -2,5 +2,5 @@
 
 while true; do
   sleep 30
-  mv /essi_deb/* /data/mini-dinstall/incoming/ 2>/dev/null
+  mv /alloc/data/essi/* /alloc/data/deb/mini-dinstall/incoming/ 2>/dev/null
 done

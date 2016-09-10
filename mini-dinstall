@@ -1,0 +1,5 @@
+[DEFAULT]
+archivedir = /alloc/data/deb
+archive_style = flat
+mail_on_success = false
+logfile = /alloc/data/deb/mini-dinstall.log
