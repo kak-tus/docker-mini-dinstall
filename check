@@ -1,16 +1,16 @@
 #!/usr/bin/env sh
 
-cd /alloc/data/essi
-
 while true; do
   sleep 30
+
+  cd /alloc/data/essi
 
   files=$(ls)
   for file in $files; do
     if [ -f /alloc/data/deb/unstable/$file ]; then
       rm /alloc/data/essi/$file
     else
-      mv /alloc/data/essi/$file /alloc/data/deb/mini-dinstall/incoming/ 2>/dev/null
+      mv /alloc/data/essi/$file /alloc/data/deb/mini-dinstall/incoming/
     fi
   done
 done
