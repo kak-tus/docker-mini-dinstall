@@ -1,9 +1,10 @@
 #!/usr/bin/env sh
 
+mkdir -p cd /alloc/data/essi
+
 while true; do
   sleep 30
 
-  mkdir -p cd /alloc/data/essi
   cd /alloc/data/essi
 
   files=$(ls)
