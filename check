@@ -1,7 +1,5 @@
 #!/usr/bin/env sh
 
-mkdir -p cd /alloc/data/essi
-
 while true; do
   sleep 30
 
