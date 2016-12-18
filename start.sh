@@ -16,5 +16,5 @@ gosu user mini-dinstall -c /etc/mini-dinstall
 gosu user /bin/check >/proc/1/fd/1 2>/proc/1/fd/2 &
 child=$!
 
-trap "gosu user mini-dinstall -c /etc/mini-dinstall -k ; kill $child" SIGTERM
+trap "gosu user mini-dinstall -c /etc/mini-dinstall -k ; kill $child" TERM
 wait "$child"
