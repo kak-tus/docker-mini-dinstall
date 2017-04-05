@@ -12,9 +12,28 @@ chown -R user:user /alloc/data/deb
 chown -R user:user /alloc/data/essi
 
 gosu user mini-dinstall -c /etc/mini-dinstall
+sleep 5
+child1=$( cat /alloc/data/deb/mini-dinstall/mini-dinstall.lock )
 
-gosu user /bin/check >/proc/1/fd/1 2>/proc/1/fd/2 &
-child=$!
+gosu user /bin/check &
+child2=$!
 
-trap "gosu user mini-dinstall -c /etc/mini-dinstall -k ; kill $child" TERM
-wait "$child"
+trap "kill $child1 ; kill $child2" TERM INT
+
+while true; do
+  kill -0 "$child1"
+  if [ "$?" = "0" ]; then
+    sleep 5
+  else
+    echo "Exited mini-dinstall"
+    exit
+  fi
+
+  kill -0 "$child2"
+  if [ "$?" = "0" ]; then
+    sleep 5
+  else
+    echo "Exited check"
+    exit
+  fi
+done
