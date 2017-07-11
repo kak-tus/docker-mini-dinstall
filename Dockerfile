@@ -4,14 +4,23 @@ ENV GOSU_VERSION=1.10
 
 RUN \
   apt-get update \
+
   && apt-get install --no-install-recommends --no-install-suggests -y \
-  mini-dinstall build-essential ca-certificates wget \
+    ca-certificates \
+    wget \
+
+  && apt-get install --no-install-recommends --no-install-suggests -y \
+    build-essential \
+    mini-dinstall \
 
   && dpkgArch="$(dpkg --print-architecture | awk -F- '{ print $NF }')" \
   && wget -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$dpkgArch" \
   && chmod +x /usr/local/bin/gosu \
 
-  && apt-get purge -y --auto-remove ca-certificates wget \
+  && apt-get purge -y --auto-remove \
+    ca-certificates \
+    wget \
+
   && rm -rf /var/lib/apt/lists/*
 
 ENV USER_UID=1000

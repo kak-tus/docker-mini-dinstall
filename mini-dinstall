@@ -4,3 +4,6 @@ archive_style = flat
 mail_on_success = false
 logfile = /alloc/data/deb/mini-dinstall.log
 architectures = all, amd64
+trigger_reindex = false
+dynamic_reindex = true
+poll_time = 60
