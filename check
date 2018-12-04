@@ -3,14 +3,14 @@
 while true; do
   sleep 30
 
-  cd /alloc/data/essi
+  cd "$IN_PATH"
 
   files=$(ls)
   for file in $files; do
-    if [ -f /alloc/data/deb/unstable/$file ]; then
-      rm /alloc/data/essi/$file
+    if [ -f "$OUT_PATH/unstable/$file" ]; then
+      rm "$IN_PATH/$file"
     else
-      mv /alloc/data/essi/$file /alloc/data/deb/mini-dinstall/incoming/
+      mv "$IN_PATH/$file" "$OUT_PATH/mini-dinstall/incoming/"
     fi
   done
 done

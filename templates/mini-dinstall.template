@@ -1,8 +1,8 @@
 [DEFAULT]
-archivedir = /alloc/data/deb
+archivedir = {{ env "OUT_PATH" }}
 archive_style = flat
 mail_on_success = false
-logfile = /alloc/data/deb/mini-dinstall.log
+logfile = {{ env "OUT_PATH" }}/mini-dinstall.log
 architectures = all, amd64
 trigger_reindex = false
 dynamic_reindex = true
