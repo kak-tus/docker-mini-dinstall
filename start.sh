@@ -2,7 +2,7 @@
 
 gosu user mini-dinstall -c /etc/mini-dinstall
 sleep 5
-child1=$( cat /alloc/data/deb/mini-dinstall/mini-dinstall.lock )
+child1=$( cat "$OUT_PATH/mini-dinstall/mini-dinstall.lock" )
 
 gosu user /bin/check &
 child2=$!
