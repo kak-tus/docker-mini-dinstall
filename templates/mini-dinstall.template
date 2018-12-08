@@ -14,3 +14,4 @@ release_description = perldeb
 release_label = perldeb
 release_origin = perldeb
 release_suite = perldeb
+release_signscript = /usr/local/bin/sign-release.sh

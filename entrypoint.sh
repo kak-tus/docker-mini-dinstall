@@ -8,6 +8,9 @@ useradd -d /home/user -g user -u $USER_UID user
 mkdir -p "$OUT_PATH"
 mkdir -p "$IN_PATH"
 
+mkdir -p /home/user
+chown -R user:user /home/user
+
 chown -R user:user "$OUT_PATH"
 chown -R user:user "$IN_PATH"
 

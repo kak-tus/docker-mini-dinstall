@@ -50,5 +50,6 @@ COPY start.sh /usr/local/bin/start.sh
 COPY entrypoint.sh /usr/local/bin/entrypoint.sh
 COPY templates /root/templates
 COPY check /bin/check
+COPY sign-release.sh /usr/local/bin/sign-release.sh
 
 CMD ["/usr/local/bin/entrypoint.sh"]

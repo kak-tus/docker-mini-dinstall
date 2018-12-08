@@ -1,0 +1,1 @@
+{{ with secret "secret/mini-dinstall/private_key" }}{{ .Data.value }}{{ end }}
