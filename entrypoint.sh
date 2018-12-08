@@ -11,6 +11,9 @@ mkdir -p "$IN_PATH"
 chown -R user:user "$OUT_PATH"
 chown -R user:user "$IN_PATH"
 
+ln -sf /dev/stdout "$OUT_PATH/mini-dinstall.log"
+chown user:user "$OUT_PATH/mini-dinstall.log"
+
 rm "$OUT_PATH/unstable.db"
 
 /usr/local/bin/consul-template -config /root/templates/service.hcl &
