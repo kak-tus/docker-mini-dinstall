@@ -38,6 +38,9 @@ RUN \
   && rm -rf /var/lib/apt/lists/*
 
 ENV \
+  VAULT_ADDR= \
+  VAULT_TOKEN= \
+  \
   USER_UID=1000 \
   USER_GID=1000 \
   \
