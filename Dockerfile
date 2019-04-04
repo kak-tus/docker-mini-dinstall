@@ -1,4 +1,4 @@
-FROM debian:8 AS build_deb
+FROM debian:8.11-slim AS build_deb
 
 ENV \
   CONSUL_TEMPLATE_VERSION=0.19.4 \
@@ -26,7 +26,7 @@ RUN \
   && echo -n "$GOSU_SHA256  /usr/local/bin/gosu" | sha256sum -c - \
   && chmod +x /usr/local/bin/gosu
 
-FROM debian:8
+FROM debian:8.11-slim
 
 RUN \
   apt-get update \
