@@ -5,6 +5,7 @@ gosu user gpg --import /etc/private_key.gpg
 key=$(gosu user gpg --list-secret-keys --with-colon | fgrep sec | awk -F : '{print $5}')
 
 cp /etc/public_key "$OUT_PATH/unstable/public_key"
+chown user "$OUT_PATH/unstable/public_key"
 
 gosu user mini-dinstall -c /etc/mini-dinstall
 sleep 5
